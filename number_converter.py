@@ -2,14 +2,11 @@ print("<<< Welcome to number system conversion >>>")
 #
 while True:
     user_input_data=input("Enter your number for conversion: ")
-    try:
-        if all(c in "-.0123456789abcdefABCDEF" for c in user_input_data) and any(c in "-123456789abcdefABCDEF" for c in user_input_data) and user_input_data.count('.') <= 1 and user_input_data.count('-') <= 1 and '-' not in user_input_data[1:len(user_input_data)]:
-            user_input_data=user_input_data
-            break
-        else:
-            print("Please enter valid data!")
-    except:
-        print("Please enter only numbers!")
+    if all(c in "-.0123456789abcdefABCDEF" for c in user_input_data) and any(c in "123456789abcdefABCDEF" for c in user_input_data) and user_input_data.count('.') <= 1 and user_input_data.count('-') <= 1 and '-' not in user_input_data[1:len(user_input_data)]:
+        user_input_data=user_input_data
+        break
+    else:
+        print("\nPlease enter valid data!\nValid data contains only numbers, at most one decimal point, \noptional leading negative sign and hexadecimal digits (A-F).")
 #
 print(f"Number type-\n1. Binary\n2. Octal\n3. Decimal\n4. Hexadecimal")
 
@@ -57,9 +54,9 @@ while True:
             users_1st_option = users_1st_option
             break
         else:
-            print("Wrong input!")
+            print("\nPlease select from the above options only!")
     except:
-        print("Please only type the relative number of the option!")
+        print("\nPlease only type the number corresponding to the option!")
 #
 while True:
     users_2nd_option=input(f"Select the type you want to convert to: ")
@@ -69,9 +66,9 @@ while True:
             users_2nd_option = users_2nd_option
             break
         else:
-            print("Wrong input!")
+            print("\nPlease select from the above options only!")
     except:
-        print("Please only type the number corresponding to the option!")
+        print("\nPlease only type the number corresponding to the option!")
 #
 user_input_data =user_input_data.lower()  #str_user_data
 splited_int_and_float_listdata = user_input_data.split('.')
